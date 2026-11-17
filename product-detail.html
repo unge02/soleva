@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K Natural Cotton Flower | SOLÉVA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">SOLÉVA</div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#shop">Shop</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- PRODUCT DETAIL -->
+    <main class="product-detail">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="product-detail-image">
+            <img
+                src="images/knatural-cottonflower.png"
+                alt="K Natural White Brightening Body Wash Cotton Flower"
+            >
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+        <div class="product-detail-info">
+
+            <p class="product-brand">K NATURAL</p>
+
+            <h1>
+                White Brightening Body Wash Cotton Flower
+            </h1>
+
+            <p class="product-short-description">
+                Sabun mandi cair harian dengan kandungan Korean Rice Milk,
+                Niacinamide, dan Vitamin C. Diformulasikan untuk membantu
+                mencerahkan serta menjaga kelembapan kulit.
+            </p>
+
+
+            <!-- PRODUCT DESCRIPTION -->
+            <div class="product-description">
+
+                <div class="description-item">
+                    <h3>Product Benefits</h3>
+
+                    <ul>
+                        <li>Membantu merawat kulit agar tidak tampak kusam.</li>
+                        <li>Membantu menjaga kulit tetap cerah dan bercahaya.</li>
+                        <li>Membantu melembapkan dan melembutkan kulit.</li>
+                        <li>Membersihkan kulit dengan busa yang melimpah.</li>
+                    </ul>
+                </div>
+
+
+                <div class="description-item">
+                    <h3>Active Ingredients</h3>
+
+                    <p>
+                        Korean Rice Milk, Niacinamide (Vitamin B3),
+                        Sodium Ascorbyl Phosphate (Vitamin C),
+                        Glycerin, dan Allantoin.
+                    </p>
+                </div>
+
+
+                <div class="description-item">
+                    <h3>Texture &amp; Fragrance</h3>
+
+                    <p>
+                        Memiliki tekstur cair yang lembut, menghasilkan
+                        busa melimpah, serta menghadirkan aroma bunga kapas
+                        yang menenangkan dan menyegarkan.
+                    </p>
+                </div>
+
+
+                <div class="description-item">
+                    <h3>Product Size</h3>
+
+                    <p>Refill 400 ml</p>
+                </div>
+
+
+                <div class="description-item product-price">
+                    <h3>Price</h3>
+
+                    <p>Rp22.500</p>
+                </div>
+
+            </div>
+
+
+                      
+        <!-- BUTTONS -->
+        <div class="product-detail-buttons">
+        <div class="purchase-buttons">
+        <button
+            type="button"
+            class="add-to-cart-button"
+            id="productAddToCart"
+            data-name="White Brightening Body Wash Cotton Flower"
+            data-image="images/knatural-cottonflower.png"
+            data-price="Rp22.500"
+            data-link="https://s.shopee.co.id/4fxpLRVJl5"
+        >
+            ADD TO CART
+        </button>
+
+        <a
+            href="https://s.shopee.co.id/4fxpLRVJl5"
+            class="buy-button"
+            id="productBuyButton"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            BUY NOW
+        </a>
+    </div>
+
+    <a href="index.html" class="back-button">
+    ← BACK TO HOME
+    </a>
+</div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>SOLÉVA</h2>
+                <p>BODY CARE COLLECTION</p>
+
+                <span>
+                    Discover your favorite body wash products
+                    for your everyday body care routine.
+                </span>
+            </div>
+
+
+            <div class="footer-links">
+                <h3>QUICK LINKS</h3>
+
+                <a href="index.html#home">Home</a>
+                <a href="index.html#shop">Shop</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+
+
+            <div class="footer-contact">
+                <h3>CONTACT US</h3>
+
+                <p>Email: hello@soleva.com</p>
+                <p>Instagram: @soleva</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2026 SOLÉVA. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.getElementById("productAddToCart");
+
+    if (!addButton) return;
+
+    addButton.addEventListener("click", function () {
+        let cart = JSON.parse(localStorage.getItem("solevaCart")) || [];
+
+        const product = {
+            name: this.dataset.name,
+            image: this.dataset.image,
+            price: this.dataset.price,
+            link: this.dataset.link
+        };
+
+        const existingProduct = cart.find(function (item) {
+            return item.name === product.name && item.link === product.link;
+        });
+
+        if (existingProduct) {
+            existingProduct.quantity = (Number(existingProduct.quantity) || 1) + 1;
+        } else {
+            cart.push({
+                ...product,
+                quantity: 1
+            });
+        }
+
+        localStorage.setItem("solevaCart", JSON.stringify(cart));
+
+        alert("Product added to cart!");
+    });
+});
+</script>
+
+</body>
+</html>

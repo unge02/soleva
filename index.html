@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLÉVA | Body Care Collection</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    
+<header>
+    <div class="logo">SOLÉVA</div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+     <div class="header-actions">
+        <div class="search-wrapper">
+            <form class="search-box" id="searchForm">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+                <button type="submit" aria-label="Search">
+                    <span>⌕</span>
+                </button>
+            </form>
+
+            <div class="search-results" id="searchResults"></div>
+        </div>
+
+        <button type="button" class="cart-button" id="cartButton">
+            <span class="cart-icon">🛒</span>
+            <span>Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="hero-subtitle">BODY CARE COLLECTION</p>
+
+        <h1>Discover Your Daily Body Care.</h1>
+
+        <p class="hero-description">
+            Find your favorite body wash for your everyday routine.
+        </p>
+
+        <a href="#shop" class="hero-button">EXPLORE COLLECTION</a>
+    </div>
+</section>
+
+<!-- Our Collections -->
+<section class="collections" id="shop">
+    <section class="collections" id="collections"></section>
+    <div class="section-heading">
+        <p>OUR COLLECTIONS</p>
+        <h2>Explore Body Care From Your Favorite Brands.</h2>
+    </div>
+
+    <div class="collection-container">
+        <div class="collection-card">
+            <div class="collection-image">
+                <img src="images/dove.png" alt="Dove Collection">
+            </div>
+            <h3>Dove</h3>
+           <button class="explore-button" onclick="showCollection('dove')">
+    LIHAT PRODUK
+</button>
+        </div>
+
+        <div class="collection-card">
+            <div class="collection-image">
+                <img src="images/knatural-spraklingmagnolia.png" alt="K Natural Collection">
+            </div>
+            <h3>K Natural Sprakling Magnolia</h3>
+           <button class="explore-button" onclick="showCollection('knatural')">
+    LIHAT PRODUK
+</button>
+        </div>
+
+        <div class="collection-card">
+            <div class="collection-image">
+                <img src="images/lux.png" alt="Lux Collection">
+            </div>
+            <h3>Lux</h3>
+           <button class="explore-button" onclick="showCollection('lux')">
+    LIHAT PRODUK
+</button>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- COLLECTION DETAIL PAGE -->
+<section class="collection-detail" id="collectionDetail">
+
+    <!-- BREADCRUMB -->
+    <div class="collection-breadcrumb">
+        <a href="#home">Home</a>
+        <span>/</span>
+        <a href="#shop">Collections</a>
+        <span>/</span>
+        <span id="collectionBrand">Dove</span>
+    </div>
+
+    <!-- MAIN PRODUCT -->
+    <div class="collection-main-product">
+
+        <div class="collection-main-image">
+            <img
+                id="collectionMainImage"
+                src="images/dove.png"
+                alt="Dove Pampering Care Body Wash"
+            >
+        </div>
+
+        <div class="collection-main-info">
+
+    
+            <p class="collection-label" id="collectionLabel">DOVE BODY CARE COLLECTION</p>
+
+            <h1 id="collectionMainName">Dove Pampering Care</h1>
+
+            <p id="collectionMainDescription">
+                Pilihan body wash dari rangkaian Dove Pampering.
+            </p>
+
+            <div class="collection-main-price" id="collectionMainPrice">
+                Lihat harga produk
+            </div>
+
+            <div class="collection-main-size">
+                <h3>Choose Your Size</h3>
+                <div id="collectionSizeOptions">
+                    <p>Informasi ukuran akan ditampilkan di sini.</p>
+                </div>
+            </div>
+
+            <a href="#" id="collectionOrderButton"
+            class="collection-order-button">
+            PESAN SEKARANG
+            </a>
+
+            <button
+             type="button"
+             id="collectionAddToCart"
+             class="add-to-cart-button"
+            >
+            ADD TO CART
+            </button>
+
+            <p class="collection-affiliate-note">
+                You will be redirected to Shopee to complete your purchase.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCT INFORMATION -->
+    <div class="collection-product-information">
+
+        <div class="collection-description">
+            <p class="collection-section-label">GET TO KNOW THE PRODUCT</p>
+            <h2>Product Description</h2>
+            <p id="collectionFullDescription">
+                Informasi lengkap produk akan ditampilkan di sini.
+            </p>
+        </div>
+
+        <div class="collection-benefits">
+            <h2>Product Benefits</h2>
+            <div id="collectionBenefits">
+                Informasi manfaat produk akan ditampilkan di sini.
+            </div>
+        </div>
+
+        <div class="collection-how-to-use">
+            <h2>How To Use</h2>
+            <p id="collectionHowToUse">
+                Informasi cara penggunaan produk akan ditampilkan di sini.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- RECOMMENDED PRODUCTS -->
+    <div class="recommended-products">
+    <p class="collection-section-label">YOU MAY ALSO LIKE</p>
+    <h2>Recommended Products</h2>
+    <div class="recommended-product-container" id="detailProductContainer"></div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="collection-back">
+        <button type="button" onclick="backToCollections()">
+            BACK TO COLLECTIONS
+        </button>
+    </div>
+
+</section>
+
+
+
+<!-- Best Selling Products -->
+<section class="products" id="products">
+    <div class="section-heading">
+        <p>OUR PRODUCTS</p>
+        <h2>Best Selling Products</h2>
+        <span>Find the perfect body wash for your daily care.</span>
+    </div>
+
+    <div class="product-container">
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/knatural-cottonflower.png" alt="K Natural Cotton Flower">
+            </div>
+            <div class="product-info">
+                <p>K NATURAL</p>
+                <h3>Cotton</h3>
+                <a href="product-detail.html">VIEW PRODUCT</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/biodef-koreanyuzu.png" alt="Biodef Korean Yuzu">
+            </div>
+            <div class="product-info">
+                <p>BIODEF</p>
+                <h3>Korean Yuzu</h3>
+                <a href="product-detail-2.html">VIEW PRODUCT</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/giv-mulberry.png" alt="GIV Mulberry &amp; Collagen">
+            </div>
+            <div class="product-info">
+                <p>GIV</p>
+                <h3>Mulberry &amp; Collagen</h3>
+                <a href="product-detail-3.html">VIEW PRODUCT</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/fresh-cupcake.png" alt="Fresh Cupcake">
+            </div>
+            <div class="product-info">
+                <p>FRESH</p>
+                <h3>Cupcake</h3>
+                <a href="product-detail-4.html">VIEW PRODUCT</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- About SOLÉVA -->
+<section class="about" id="about">
+    <div class="about-content">
+        <p class="about-subtitle">ABOUT SOLÉVA</p>
+
+        <h2>Your Daily Body Care, Made Simple.</h2>
+
+        <p class="about-description">
+            SOLÉVA is a curated body care collection that helps
+            you discover body wash products from your favorite brands.
+            Explore different products and find the right choice
+            for your daily body care routine.
+        </p>
+
+        <button type="button" class="about-button" id="learnMoreButton">
+    LEARN MORE
+</button>
+    </div>
+
+    <div class="about-image">
+        <img src="images/about-soleva.jpg" alt="SOLÉVA Body Care">
+    </div>
+</section>
+
+<!-- ABOUT SOLÉVA POP-UP -->
+<div class="about-modal" id="aboutModal">
+    <div class="about-modal-content">
+
+        <button type="button" class="about-modal-close" id="closeAboutModal">
+            &times;
+        </button>
+
+        <p class="about-subtitle">GET TO KNOW US</p>
+        <h2>Welcome to SOLÉVA</h2>
+
+        <p>
+            SOLÉVA is a curated body care collection created to help
+            you discover body wash products from your favorite brands.
+        </p>
+
+        <h3>Our Philosophy</h3>
+        <p>
+            We believe that choosing body care should be simple.
+            Every product offers different experiences, scents,
+            and benefits for your everyday routine.
+        </p>
+
+        <h3>Our Collection</h3>
+        <p>
+            Explore a variety of body wash products from selected
+            brands, including Dove, K Natural, Lux, and more.
+        </p>
+
+        <h3>Our Purpose</h3>
+        <p>
+            SOLÉVA helps you explore product information and discover
+            body care options that suit your preferences.
+        </p>
+
+    </div>
+</div>
+
+
+
+<!-- Explore More -->
+<section class="explore-more">
+    <div class="explore-content">
+        <p>DISCOVER YOUR BODY CARE</p>
+
+        <h2>Find Your Everyday Body Care.</h2>
+
+        <span>
+            Explore our collection of body wash products
+            from your favorite brands.
+        </span>
+
+        <a href="#products">EXPLORE MORE</a>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>SOLÉVA</h2>
+            <p>BODY CARE COLLECTION</p>
+            <span>
+                Discover your favorite body wash products
+                for your everyday body care routine.
+            </span>
+        </div>
+
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>CONTACT US</h3>
+            <p>Email: hello@soleva.com</p>
+            <p>Instagram: @soleva</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 SOLÉVA. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<!-- SHOPPING CART PANEL -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h2>My Shopping Cart</h2>
+        <button type="button" id="closeCartButton">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is currently empty.</p>
+    </div>
+
+    <div class="cart-footer">
+        <p>Selected Products: <span id="cartTotalItems">0</span></p>
+        <p class="cart-note">
+            Purchase each product through its Shopee link.
+        </p>
+    </div>
+</aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
